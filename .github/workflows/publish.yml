@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  check-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Run checks
+        run: |
+          echo "Nothing for now..."
+        continue-on-error: false
+        shell: pwsh
+
+  finish:
+    name: Finish
+    needs: [ check-data ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-ruby@v1
+      - name: Notify DPT on Discord
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        env:
+          JOB_STATUS: ${{ job.status }}
+          WEBHOOK_URL: ${{ secrets.DISCORD_DPT_DEPLOYMENT_NOTIFICATIONS_WEBHOOK_URL }}
+          HOOK_OS_NAME: ${{ runner.os }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+        run: |
+          git clone https://github.com/DiscordHooks/github-actions-discord-webhook webhook
+          bash webhook/send.sh $JOB_STATUS $WEBHOOK_URL
+        shell: bash

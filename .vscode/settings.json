@@ -1,0 +1,23 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [140],
+  "editor.formatOnSave": false,
+  "files.trimTrailingWhitespace": false,
+  "files.insertFinalNewline": false,
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  "search.exclude": {
+    "public/**": true,
+    "node_modules/**": true,
+    "_dprhtml/js/external/**": true,
+    "tools/**": true,
+  },
+}

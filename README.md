@@ -1,4 +1,4 @@
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![CI](https://github.com/digitalpalitools/lists/actions/workflows/publish.yml/badge.svg)](https://github.com/digitalpalitools/lists/actions/workflows/publish.yml) [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 # Common lists from the pāli canon
 
